@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bat Ball Game </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 id="heading">Bat Ball Stump Game </h1>
+    
+    <button
+    onclick="
+    let computerChoice=generateComputerchoice();
+     let resultmsg;
+     if(computerChoice==='Ball'){
+     resultmsg='you own';
+     }else if(computerChoice==='Bat'){
+     resultmsg=`it's a tie`;
+     }else if(computerChoice==='Stump'){
+     resultmsg=`computer has own `;
+    }
+    alert(`you have chosen Bat .computer choice is ${computerChoice} and ${resultmsg}`)
+     ">Bat</button>
+
+<button  onclick="
+ computerChoice=generateComputerchoice();
+
+ if(computerChoice==='Ball'){
+ resultmsg=`it's a tie`;
+}else if(computerChoice==='Bat'){
+ resultmsg='computer has own';
+}else if(computerChoice==='Stump'){
+ resultmsg=`user own `;
+}
+ alert(`you have chosen Ball .computer choice is ${computerChoice} and ${resultmsg}`);
+" >Ball</button>  
+
+<button  onclick="
+computerChoice=generateComputerchoice();
+
+ if(computerChoice==='Ball'){
+ resultmsg='computer has own';
+}else if(computerChoice==='Bat'){
+ resultmsg=`user own `
+}else if(computerChoice==='Stump'){
+ resultmsg=`it's a tie`;
+}
+ alert(`you have chosen Stump .computer choice is ${computerChoice} and ${resultmsg}`);
+">Stump</button>
+
+
+
+<Script>
+    
+    function generateComputerchoice(){
+        let randomNumber=Math.random() * 3;
+         if(randomNumber>0 && randomNumber<=1){
+        return `Bat`
+        }else if(randomNumber >1 && randomNumber <=2){
+         return 'Ball';
+        }else{
+        return 'Stump';
+  }
+ }
+</Script>
+</body>
+</html>
